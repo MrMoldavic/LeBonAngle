@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% if categories %}
+    <ul>
+    {% for category in categories %}
+        <li><a href="/category_edit/{{category.id }}">{{ category.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    Pas de données
+{% endif %}
+
+{% endblock %}
+

@@ -20,5 +20,9 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    App\EventSubscriber\LoginVerifiedSubscriber:
+        tags:
+            - { name: kernel.event_subscriber, event: security.authentication.success, method: onAuthenticationSuccess, priority: 9 }
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
